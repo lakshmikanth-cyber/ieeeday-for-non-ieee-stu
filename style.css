@@ -1,0 +1,194 @@
+/* Color Palette from your logos */
+:root {
+    --primary-blue: #003366; /* From Sir C.R. Reddy Logo */
+    --accent-gold: #FFD700;   /* From Sir C.R. Reddy Logo */
+    --accent-orange: #F2A900;  /* From IEEE CS Logo */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --bg-light: #f4f7f6;
+    --border-light: #ddd;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-gold);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--accent-gold);
+}
+/* Styling for the logos in the header */
+.header-logos {
+    display: flex;
+    justify-content: center; /* This centers the group of logos */
+    align-items: center;
+    gap: 2rem; /* Add this back to create space between them */
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; 
+   
+}
+
+.logo {
+    height: auto; /* Adjust this value to make logos bigger or smaller */
+    width: 100%;
+    background-color: transparent;
+    
+ max-width: 100%; 
+}
+
+/* You might want to adjust the IEEE CS logo slightly */
+.logo[alt="IEEE CS Logo"] {
+    height: 70px; /* Example: making one logo a different size */
+}
+
+/* Event Grid Layout */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Event Card Styling */
+.event-card {
+    background: var(--text-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.event-image-placeholder {
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+    background-size: cover;
+    background-position: center;
+}
+.event-card-img {
+    width: 100%;       /* Make the image fill the width of its container */
+    height: 100%;      /* Make the image fill the height of its container */
+    object-fit: cover; /* This is the key: it crops the image to fit without stretching */
+    border-radius: 10px 10px 0 0; /* Match card border radius */
+}
+/* TODO: Add your images here using background-image or an <img> tag in the HTML */
+/* Example:
+.event-card:nth-child(1) .event-image-placeholder {
+    background-image: url('images/ai-leap.jpg');
+}
+*/
+
+.event-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
+    color: var(--primary-blue);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* **** UPDATED CSS FOR SPEAKER LISTS **** */
+.event-speakers {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.event-speakers strong {
+    display: block;
+    color: var(--accent-orange);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.event-speakers ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0; 
+}
+
+.event-speakers li {
+    font-weight: 600;
+}
+/* *************************************** */
+
+.event-description {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* Button Styling */
+.register-btn {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    
+    /* **** ADDED THESE LINES **** */
+    text-decoration: none; /* Removes the link underline */
+    text-align: center;
+    display: block; /* Makes the link fill the button space */
+}
+
+.register-btn:hover {
+    background-color: var(--accent-orange);
+}
+
+/* **** I HAVE DELETED ALL THE MODAL AND FORM STYLES FROM HERE **** */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    margin-top: 2rem;
+}
